@@ -36,27 +36,29 @@ class JankenAcchimuite
    puts "あなた：#{directions[player_direction]} 相手：#{directions[program_direction]}"
 
   if player_direction == program_direction
-     if @lose
+     if @win
         puts "#{@lose}"
-        return false
-     elsif @win
+     elsif @lose
         puts "#{@win}"
-        return false
      end
+     return false
   end
   if player_direction != program_direction
    puts "#{@draw}"
-   return true
   end
+  return true
  end
  
- loop do
+ 
+ while 
  result1 = JankenAcchimuite.new("あいこ","あっち向いて","あっち向いて")
  next_game = true
- while next_game
- next_game = result1.janken
- end
+  while next_game
+  next_game = result1.janken
+  end
  result2 = JankenAcchimuite.new("もう一度ジャンケンを行います","負けました","勝ちました")
- puts result2.acchimuite_hoi
+ if result2.acchimuite_hoi == false
+  break
+ end
  end
 end
