@@ -1,5 +1,6 @@
 puts "あっち向いてホイを始めます"
 puts "ジャンケン・・・"
+
 class JankenAcchimuite
  def initialize (draw ="あいこ",lose ="負け",win ="勝ち")
    @draw = draw
@@ -11,6 +12,10 @@ class JankenAcchimuite
   #実装する
   puts "[0]グー,[1]チョキ,[2]パー"
   player_hand = gets.to_i
+  if player_hand < 0 || 2 < player_hand then
+  puts "無効な値です"
+  return true
+  end
   program_hand = rand(3)
 
   jankens = ["グー","チョキ","パー"]
@@ -50,7 +55,7 @@ class JankenAcchimuite
  end
  
  
- while 
+while 
  result1 = JankenAcchimuite.new("あいこ","あっち向いて","あっち向いて")
  next_game = true
   while next_game
@@ -60,5 +65,5 @@ class JankenAcchimuite
  if result2.acchimuite_hoi == false
   break
  end
- end
+end
 end
