@@ -42,9 +42,9 @@ class JankenAcchimuite
 
   if player_direction == program_direction
      if @win
-        puts "#{@lose}"
-     elsif @lose
         puts "#{@win}"
+     elsif @lose
+        puts "#{@lose}"
      end
      return false
   end
